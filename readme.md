@@ -6,6 +6,11 @@ Welcome to the Rock Paper Scissors Beta repository! This project is an ongoing d
 
 This project utilizes JavaScript embedded within HTML to create the Rock, Paper, Scissors game. The JavaScript code is responsible for handling game logic, user interactions, and generating dynamic content on the web page.
 
+## Screenshots
+
+![Sample Image](UI.png)
+![Sample Image](alert.png)
+
 ## Features
 
 - Play Rock, Paper, Scissors against a computer opponent with AI.
