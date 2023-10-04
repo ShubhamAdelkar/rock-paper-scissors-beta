@@ -8,8 +8,8 @@ This project utilizes JavaScript embedded within HTML to create the Rock, Paper,
 
 ## Screenshots
 
-![Sample Image](UI.png)
-![Sample Image](alert.png)
+![Alt text](<Screenshot 2023-10-04 161005.png>)
+![Alt text](<Screenshot 2023-10-04 161043.png>)
 
 ## Features
 
