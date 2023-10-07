@@ -31,6 +31,8 @@
       Scissors
     </button>
 
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
     <p class="js-score"></p>
 
     <button
@@ -79,17 +81,17 @@
           if (computerMove === "Rock") {
             result = "You lose!";
           } else if (computerMove === "Paper") {
-            result = "You win!";
-          } else if (computerMove === "Scissors") {
             result = "tie!";
+          } else if (computerMove === "Scissors") {
+            result = "You win!";
           }
         } else if (playerMove === "Rock") {
           if (computerMove === "Rock") {
-            result = "You lose!";
+            result = "tie!";
           } else if (computerMove === "Paper") {
             result = "You win!";
           } else if (computerMove === "Scissors") {
-            result = "tie!";
+            result = "You!";
           }
         }
 
@@ -102,11 +104,12 @@
         }
 
         localStorage.setItem("score", JSON.stringify(score));
-
         updateScoreElement();
 
-        alert(`${playerMove}, Computer Picked ${computerMove}. ${result}
-wins: ${score.wins}, loss: ${score.loss}, tie: ${score.tie}`);
+        document.querySelector(".js-result").innerHTML = result;
+
+        document.querySelector(".js-moves").innerHTML = (`You ${playerMove} - ${computerMove} computer`);
+
       }
 
       function updateScoreElement() {
