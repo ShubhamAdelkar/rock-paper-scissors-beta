@@ -3,24 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Rock Paper Scissors</title>
+    <link
+      href="https://db.onlinewebfonts.com/c/d7e8a95865396cddca89b00080d2cba6?family=SoDo+Sans+SemiBold"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <p>Rock Paper Scissors</p>
-    <button
-      onclick="
-       playGame('Rock');
-    "
-    >
-      Rock
+    <h2>Rock Paper Scissors</h2>
+
+    <button class="rock" onclick="playGame('Rock');">
+      <img src="rock.png" alt="" />
     </button>
 
-    <button
-      onclick="
-       playGame('Paper');
-    "
-    >
-      Paper
+    <button>
+      <img
+        onclick="
+      playGame('Paper');
+   "
+        class="paper"
+        src="paper.png"
+        alt=""
+      />
     </button>
 
     <button
@@ -28,7 +33,7 @@
         playGame('Scissors');
     "
     >
-      Scissors
+      <img class="scissors" src="scissors.png" alt="" />
     </button>
 
     <p class="js-result"></p>
@@ -36,6 +41,7 @@
     <p class="js-score"></p>
 
     <button
+      class="reset"
       onclick="
     score.wins = 0;
     score.loss = 0;
@@ -46,6 +52,7 @@
     >
       Reset
     </button>
+
     <script>
       let score = JSON.parse(localStorage.getItem("score"));
 
@@ -59,12 +66,6 @@
 
       updateScoreElement();
 
-      // const score = {
-      //   wins: 0,
-      //   loss: 0,
-      //   tie: 0,
-      // };
-
       function playGame(playerMove) {
         const computerMove = pickComputerMove();
 
@@ -75,23 +76,23 @@
           } else if (computerMove === "Paper") {
             result = "You win!";
           } else if (computerMove === "Scissors") {
-            result = "tie!";
+            result = "Tie!";
           }
         } else if (playerMove === "Paper") {
           if (computerMove === "Rock") {
-            result = "You lose!";
-          } else if (computerMove === "Paper") {
-            result = "tie!";
-          } else if (computerMove === "Scissors") {
             result = "You win!";
+          } else if (computerMove === "Paper") {
+            result = "Tie!";
+          } else if (computerMove === "Scissors") {
+            result = "You lose!";
           }
         } else if (playerMove === "Rock") {
           if (computerMove === "Rock") {
-            result = "tie!";
+            result = "Tie!";
           } else if (computerMove === "Paper") {
-            result = "You win!";
+            result = "You lose!";
           } else if (computerMove === "Scissors") {
-            result = "You!";
+            result = "You win!";
           }
         }
 
@@ -108,14 +109,15 @@
 
         document.querySelector(".js-result").innerHTML = result;
 
-        document.querySelector(".js-moves").innerHTML = (`You ${playerMove} - ${computerMove} computer`);
-
+        document.querySelector(
+          ".js-moves"
+        ).innerHTML = `${playerMove} - ${computerMove} `;
       }
 
       function updateScoreElement() {
         document.querySelector(
           ".js-score"
-        ).innerHTML = `wins: ${score.wins}, loss: ${score.loss}, tie: ${score.tie}`;
+        ).innerHTML = `wins: ${score.wins}   loss: ${score.loss}   tie: ${score.tie}`;
       }
 
       function pickComputerMove() {
@@ -131,5 +133,6 @@
         return computerMove;
       }
     </script>
+    <!-- <footer><p class="imbachhu">© imbachhu</p></footer> -->
   </body>
 </html>
