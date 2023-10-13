@@ -1,16 +1,40 @@
+@font-face {
+    font-family: 'blendingregular';
+    src: url('blending-jrj67-webfont.woff2') format('woff2'),
+        url('blending-jrj67-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
-    font-family: "SoDo Sans SemiBold";
+    /* font-family: "SoDo Sans SemiBold"; */
+    font-family: 'blendingregular';
     background: #FCF6F5FF;
     align-items: center;
     padding-left: 20px;
 }
+.container {
+    display: grid;
+    place-content: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+    height: 100vh;
+    scroll-behavior: smooth;
+}
 
+.game {
+    scale: 1.5;
+}
 h1 {
-    font-weight: bold;
+    font-weight: normal;
 }
 
 img {
     width: 50px;
+    transition: all 0.2s ease-in-out;
 }
 
 button {
@@ -23,6 +47,7 @@ button {
 
 img:hover {
     cursor: pointer;
+    scale: 0.9575;
 }
 
 .paper {
@@ -34,18 +59,23 @@ img:hover {
 }
 
 p {
-    font-weight: 400;
+    /* font-weight: 400; */
     padding-left: 2px;
 }
 
 .reset {
-    font-family: "SoDo Sans SemiBold";
-    padding: 8px 12px 6px 12px;
+    font-family: 'blendingregular';
+    padding: 8px 12px;
     color: #FCF6F5FF;
     cursor: pointer;
     background-color: #990011FF;
+    transition: all 0.2s ease-in-out;
 }
 
+.reset:hover {
+    background-color: rgb(141, 0, 16);
+    scale: 0.9575;
+}
 
 /* .imbachhu {
     font-family: Arial, Helvetica, sans-serif;
